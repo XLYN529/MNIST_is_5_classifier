@@ -1,0 +1,27 @@
+# --- Data Files ---
+# Ignore all CSVs (Dataset is too large for GitHub)
+*.csv
+
+# --- Models ---
+# Ignore serialized models (Binaries can be large/messy in version control)
+*.pkl
+*.joblib
+
+# --- Jupyter & Python Junk ---
+# Ignore autosave checkpoints
+.ipynb_checkpoints/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# --- System Files ---
+# Ignore Mac OS finder settings
+.DS_Store
+
+# --- Environments ---
+# Ignore virtual environment folders (just in case you create one inside the repo)
+myenv/
+env/
+venv/
+.conda/
