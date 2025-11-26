@@ -32,23 +32,21 @@ The model was evaluated on the unseen Test Set (10,000 images) using a custom de
 
 ## Usage
 
-### Running the Analysis
-Open `5_classifier.ipynb` in Jupyter Notebook or VS Code to see the full training pipeline, including:
-* Data preprocessing and exploration.
-* Model comparison (SGD vs. Logistic Regression vs. Random Forest).
-* Hyperparameter tuning using RandomizedSearchCV.
-* Precision-Recall curve analysis.
+### 1. Generate the Model
+Since the trained model file is too large for GitHub, you must generate it locally:
+1. Open `5_classifier.ipynb`.
+2. Run all cells.
+3. The notebook will save the trained model as `mnist_random_forest_precision_99.pkl` in your folder.
 
-### Loading the Trained Model
-The final model is saved as a serialized object. You can load it in Python to make predictions without retraining:
+### 2. Load the Model (After Generation)
+Once you have run the notebook, you can use the model in your own scripts:
 
 ```python
 import joblib
 
-# Load the model
+# Load the model you just generated
 model = joblib.load("mnist_random_forest_precision_99.pkl")
 
-# Predict on new data (expects 28x28 flattened array)
-# Note: Ensure you apply the custom threshold logic if needed, 
-# though this specific model file was saved with the best estimator settings.
+# Predict on new data
+# Note: This model is tuned for High Precision (99%)
 prediction = model.predict(new_image_data)
